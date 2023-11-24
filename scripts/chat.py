@@ -1,3 +1,5 @@
+# pyright: basic
+
 import openai
 
 completion = openai.ChatCompletion.create(
