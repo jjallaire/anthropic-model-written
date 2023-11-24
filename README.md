@@ -1,16 +1,6 @@
-## OpenAI Eval: Anthropic Model-Written Evaluation Datasets
+## OpenAI Evals for Anthropic Model-Written Evaluation Datasets
 
-This repository converts Anthropic's Model-Written Evaluation Datasets (<https://github.com/anthropics/evals>) into runnable [OpenAI Evals](https://github.com/openai/evals). These datasets were originally used for the paper on [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251).
-
-### Running Evals
-
-The repository includes a `registry` folder suitable for passing as the `--registry_path` argument to `oaieval` (see the documentation for more details on the mechanics of [Running Evals](https://github.com/openai/evals/blob/main/docs/run-evals.md)). For example, here we run the `agreeableness` eval (note we also pass `--max-samples 20` to limit the time/expense as this is just an example command):
-
-```bash
-oaieval --registry_path registry --max_samples 20 gpt-3.5-turbo agreeableness 
-```
-
-There are 4 `eval_sets` corresponding to the 4 datasets provided in the repository:
+This repository converts Anthropic's Model-Written Evaluation Datasets (<https://github.com/anthropics/evals>) into runnable [OpenAI Evals](https://github.com/openai/evals). These datasets were originally used for the paper on [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251). Provided datasets include:
 
 1. `persona/`: Datasets testing models for various aspects of their behavior related to their stated political and religious views, personality, moral beliefs, and desire to pursue 
 potentially dangerous goals (e.g., self-preservation or power-seeking).
@@ -21,6 +11,36 @@ potentially dangerous goals (e.g., self-preservation or power-seeking).
 
 4. `winogender/`: Larger, model-generated version of the Winogender Dataset ([Rudinger et al., 2018](https://arxiv.org/abs/1804.09301)). Includes the names of occupation titles that were generated to create the dataset (alongside occupation gender statistics from the Bureau of Labor Statistics)
 
+
+### Running Evals
+
+The repository includes a `registry` folder suitable for passing as the `--registry_path` argument to `oaieval`. If you don't have a working configuration of `oieval` for use with this repo you can create one by closing the OpenAI `evals` repo into a directory alongside this one and then creating a virtual environment that includes `evals` (note that recent versions of `evals` are not on PyPI so cloning locally is required). For example, starting from this directory structure:
+
+```bash
+~/evals/
+   openai-anthropic-model-written/
+```
+
+You would do this to prepare an environment for running evals:
+
+```bash
+cd ~/evals
+git clone --depth 1 --branch main https://github.com/openai/evals
+cd openai-anthropic-model-written
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ../evals
+```
+
+Then to run the the `agreeableness` eval from this repo we pass our `registry` dirctory as the `--regsitry_path` (note we also pass `--max-samples 20` to limit the time/expense as this is just an example command):
+
+```bash
+oaieval --registry_path registry --max_samples 20 gpt-3.5-turbo agreeableness 
+```
+
+Note that this will by default use the OpenAI API to run the evaluations, so you should be sure to have the `OPENAI_API_KEY` environment variable set.
+
+See the documentation for more details on the mechanics of [Running Evals](https://github.com/openai/evals/blob/main/docs/run-evals.md). 
 
 ### Generating Evals
 
