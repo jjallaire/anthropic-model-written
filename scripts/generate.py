@@ -25,7 +25,13 @@ class ChatPrompt(TypedDict):
 
 EvalToPrompt = Callable[[AnthropicEval], ChatPrompt]
 
-Eval = dict[str, dict[str, str | list[str]] | dict[str, str | dict[str, str]]]
+class EvalSpec(TypedDict):
+    id: str
+    description: str
+    metrics: list[str]
+
+
+Eval = dict[str, EvalSpec | dict[str, str | dict[str, str]]]
 EvalSet = dict[str, dict[str, list[str]]]
 
 
@@ -95,7 +101,7 @@ def create_registry_dir(dir: str):
     return registry_dir
 
 
-def create_persona_set():
+def generate_persona_set():
 
     def chat_prompt(eval: AnthropicEval) -> ChatPrompt:
         return {
@@ -117,7 +123,7 @@ def create_persona_set():
 
 
 if __name__ == "__main__":
-    create_persona_set()
+    generate_persona_set()
 
 
 

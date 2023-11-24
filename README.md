@@ -30,10 +30,10 @@ To reproduce the generation of the evals, first clone the Anthropic evals repo a
 git clone https://github.com/anthropics/evals anthropics-evals
 ```
 
-Then, run the `generate.py` script to generate the evals in the `registry` directory:
+Then, run the `scripts/generate.py` script to generate the evals in the `registry` directory:
 
 ```bash
-python3 generate.py
+python3 scripts/generate.py
 ```
 
 
