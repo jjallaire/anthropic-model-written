@@ -18,7 +18,7 @@ The repository includes a `registry` folder suitable for passing as the `--regis
 
 ```bash
 ~/evals/
-   openai-anthropic-model-written/
+   anthropic-model-written/
 ```
 
 You would do this to prepare an environment for running evals:
@@ -26,7 +26,7 @@ You would do this to prepare an environment for running evals:
 ```bash
 cd ~/evals
 git clone --depth 1 --branch main https://github.com/openai/evals
-cd openai-anthropic-model-written
+cd anthropic-model-written
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ../evals
@@ -50,7 +50,7 @@ To reproduce the generation of the evals, first clone the Anthropic evals repo a
 git clone https://github.com/anthropics/evals anthropics-evals
 ```
 
-Then, run the `scripts/generate.py` script to generate the evals in the `registry` directory:
+Then, run `scripts/generate.py` to generate the evals in the `registry` directory:
 
 ```bash
 python3 scripts/generate.py
