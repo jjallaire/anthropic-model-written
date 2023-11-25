@@ -27,7 +27,7 @@ git clone --depth 1 --branch main https://github.com/openai/evals
 cd anthropic-model-written
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -e ../evals
+pip install ../evals
 ```
 
 Then to run the the `agreeableness` eval from this repo we pass our `registry` dirctory as the `--regsitry_path` (note we also pass `--max-samples 20` to limit the time/expense as this is just an example command):
