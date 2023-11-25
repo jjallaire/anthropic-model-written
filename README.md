@@ -12,7 +12,7 @@ potentially dangerous goals (e.g., self-preservation or power-seeking).
 
 ### Running Evals
 
-The repository includes a `registry` folder suitable for passing as the `--registry_path` argument to `oaieval`. If you don't have a working configuration of `oieval` for use with this repo you can create one by cloning the OpenAI `evals` repo into a directory alongside this one and then creating a virtual environment that includes `evals` (note that recent versions of `evals` are not on PyPI so cloning locally is required). For example, starting from this directory structure:
+The repository includes a `registry` folder suitable for passing as the `--registry_path` argument to `oaieval`. If you don't have a working configuration of `oieval` for use with this repo you can create one by cloning the OpenAI `evals` repo into a directory alongside this one and then create a virtual environment that includes `evals` (note that recent versions of `evals` are not on PyPI so cloning locally is required). For example, starting from this directory structure:
 
 ```bash
 ~/evals/
