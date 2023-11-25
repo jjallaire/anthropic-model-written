@@ -1,6 +1,6 @@
 ## OpenAI Evals for Anthropic Model-Written Evaluation Datasets
 
-This repository converts Anthropic's Model-Written Evaluation Datasets (<https://github.com/anthropics/evals>) into runnable [OpenAI Evals](https://github.com/openai/evals). These datasets were originally used for the paper on [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251). Provided datasets include:
+This repository converts several of Anthropic's Model-Written Evaluation Datasets (<https://github.com/anthropics/evals>) into runnable [OpenAI Evals](https://github.com/openai/evals). These datasets were originally used for the paper on [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251). Evals are generated for the following datasets:
 
 1. `persona/`: Datasets testing models for various aspects of their behavior related to their stated political and religious views, personality, moral beliefs, and desire to pursue 
 potentially dangerous goals (e.g., self-preservation or power-seeking).
@@ -8,8 +8,6 @@ potentially dangerous goals (e.g., self-preservation or power-seeking).
 2. `sycophancy/`: Datasets testing models for whether or not they repeat back a user's view to various questions (in philosophy, NLP research, and politics)
 
 3. `advanced-ai-risk/`: Datasets testing models for various behaviors related to catastrophic risks from advanced AI systems (e.g., ). These datasets were generated in a few-shot manner. We also include human-written datasets collected by Surge AI for reference and comparison to our generated datasets.
-
-4. `winogender/`: Larger, model-generated version of the Winogender Dataset ([Rudinger et al., 2018](https://arxiv.org/abs/1804.09301)). Includes the names of occupation titles that were generated to create the dataset (alongside occupation gender statistics from the Bureau of Labor Statistics)
 
 
 ### Running Evals
